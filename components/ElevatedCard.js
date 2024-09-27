@@ -2,6 +2,32 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 const ElevatedCard = () => {
+  const arr = [
+    {
+      colors: "purple",
+    },
+    {
+      colors: "orange",
+    },
+    {
+      colors: "teal",
+    },
+    {
+      colors: "magenta",
+    },
+    {
+      colors: "silver",
+    },
+    {
+      colors: "coral",
+    },
+    {
+      colors: "lime",
+    },
+    {
+      colors: "turquoise",
+    },
+  ];
   return (
     <View>
       <Text style={styles.headingText}>Elevated Card</Text>
@@ -12,31 +38,16 @@ const ElevatedCard = () => {
         // showsHorizontalScrollIndicator={false} scroll line
         // contentContainerStyle={{ paddingHorizontal: 10 }}
       >
-        <View style={styles.card}>
-          <Text>Red</Text>
-        </View>
-        <View style={styles.card}>
-          <Text>Green</Text>
-        </View>
-        <View style={styles.card}>
-          <Text>Blue</Text>
-        </View>
-        <View style={styles.card}>
-          <Text>yellow</Text>
-        </View>
-
-        <View style={styles.card}>
-          <Text>Red</Text>
-        </View>
-        <View style={styles.card}>
-          <Text>Green</Text>
-        </View>
-        <View style={styles.card}>
-          <Text>Blue</Text>
-        </View>
-        <View style={styles.card}>
-          <Text>yellow</Text>
-        </View>
+        {arr.map((item, index) => (
+          <View
+            key={index}
+            style={[styles.card, { backgroundColor: item.colors }]}
+          >
+            <Text>
+              {item.colors.charAt(0).toUpperCase() + item.colors.slice(1)}
+            </Text>
+          </View> 
+        ))}
       </ScrollView>
     </View>
   );
@@ -52,10 +63,10 @@ const styles = StyleSheet.create({
     paddingTop: 25,
   },
   container: {
-    backgroundColor:"black",
-    padding:10,
-    width:"95%",
-    margin:"auto"
+    backgroundColor: "black",
+    padding: 10,
+    width: "95%",
+    margin: "auto",
   },
 
   card: {
@@ -67,5 +78,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     margin: 5,
-}
+  },
 });

@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 
 const FancyCard = () => {
@@ -18,7 +24,9 @@ const FancyCard = () => {
         </View>
         <Text style={styles.highLight}>Sunset</Text>
         <TouchableOpacity style={styles.descBtn} onPress={desc}>
-          <Text style={{ fontSize: 20, color: "white" }}>⬇</Text>
+          <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+            &uarr;
+          </Text>
         </TouchableOpacity>
         <View
           style={[
@@ -50,7 +58,6 @@ const styles = StyleSheet.create({
 
   imageContainer: {
     margin: 10,
-    width: "100vw",
     height: 200,
     backgroundColor: "#f0f0f0",
     justifyContent: "center",
@@ -60,7 +67,6 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    opacity: 0.8,
     height: 200,
     width: "100%",
     resizeMode: "cover",
@@ -71,31 +77,40 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
     padding: 10,
-    borderRadius: 10,
     position: "absolute",
     right: 20,
     top: 10,
   },
 
   descBtn: {
-    backgroundColor: "gray",
-    marginHorizontal: 100,
+    backgroundColor: "black",
+    marginHorizontal: 130,
     marginVertical: 10,
     borderRadius: 20,
+    textAlign: "center",
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
 
   descText: {
-    padding: 10,
+    marginHorizontal: 15,
+    marginVertical: 10,
+    color: "white",
   },
 
   description: {
     margin: 10,
     position: "absolute",
-    top: 60,
-    backgroundColor: "gray",
-    height: 130,
+    backgroundColor: "rgba(255, 255, 255, 0.2)", // adjust the opacity to achieve the desired glass effect
+    height: 200,
+    borderRadius: 10,
+    overflow: "hidden",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    filter: "blur(5px)", // keep the blur effect
+    backdropFilter: "blur(5px)", // add this line to apply a blur effect to the background
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // add a subtle shadow to enhance the glass effect
   },
 });

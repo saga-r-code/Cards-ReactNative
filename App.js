@@ -2,25 +2,22 @@ import {
   StatusBar,
   SafeAreaView,
   ScrollView,
-  StyleSheet,
 } from "react-native";
 import React, { useState } from "react";
 import FaltCards from "./components/FaltCards";
 import ElevatedCard from "./components/ElevatedCard";
 import FancyCard from "./components/FancyCard";
+import ActionCard from "./components/ActionCard";
 
 const App = () => {
-  const [theme, setTheme] = useState(false);
-  const toggle = () => {
-    setTheme(!theme);
-  };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:"#F0EBE3"}}>
       <StatusBar backgroundColor="gray"></StatusBar>
       <ScrollView>
         <FaltCards />
         <ElevatedCard />
         <FancyCard />
+        <ActionCard/>
       </ScrollView>
     </SafeAreaView>
   );
@@ -28,19 +25,4 @@ const App = () => {
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    justifyContent:"center",
-    alignItems:"center",
-    paddingTop:20
-  },
-  mode:{
-    backgroundColor:"black",
-    color:"white",
-    fontSize:16,
-    paddingVertical:8,
-    paddingHorizontal:20,
-    borderRadius:10
 
-  }
-});
