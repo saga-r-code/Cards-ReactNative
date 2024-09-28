@@ -46,7 +46,7 @@ const ElevatedCard = () => {
             <Text>
               {item.colors.charAt(0).toUpperCase() + item.colors.slice(1)}
             </Text>
-          </View> 
+          </View>
         ))}
       </ScrollView>
     </View>

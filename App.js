@@ -3,11 +3,12 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import FaltCards from "./components/FaltCards";
 import ElevatedCard from "./components/ElevatedCard";
 import FancyCard from "./components/FancyCard";
 import ActionCard from "./components/ActionCard";
+import ContactList from "./components/ContactList";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <ElevatedCard />
         <FancyCard />
         <ActionCard/>
+        <ContactList />
       </ScrollView>
     </SafeAreaView>
   );
