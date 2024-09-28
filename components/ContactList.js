@@ -77,16 +77,31 @@ const ContactList = () => {
   ];
   return (
     <View>
-      <Text style={styles.headingText}>ContactList</Text>
-      <ScrollView horizontal={true} contentContainerStyle={styles.container}>
+      <Text style={styles.headingText}>Contact List</Text>
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.container}
+      >
         {people.map((item, index) => (
           <View key={index} style={styles.card}>
-            <Text style={styles.status}>{item.status}</Text>
+            <Text
+              style={[
+                styles.status,
+                item.status === "Available"
+                  ? { color: "green" }
+                  : item.status === "Busy"
+                  ? { color: "#F7DC6F" }
+                  : { color: "#E74C3C" },
+              ]}
+            >
+              {item.status}
+            </Text>
             <View style={styles.header}>
               <MaterialCommunityIcons
                 name="account"
                 size={24}
-                color="black"
+                color="#FBFBFF"
                 style={{
                   backgroundColor: "gray",
                   padding: 5,
@@ -118,12 +133,12 @@ const styles = StyleSheet.create({
     paddingTop: 25,
   },
   container: {
-    flex: 1,
-    flexDirection: 'row',
-    gap:10,
-    padding:10,
+    padding: 20,
   },
   card: {
+   
+    marginHorizontal: 10, // add horizontal margin
+    marginBottom: 20, // add bottom margin
     backgroundColor: "#fff",
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -138,7 +153,6 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   status: {
-    color: "green",
     paddingHorizontal: 5,
     fontWeight: "600",
     textAlign: "right",

@@ -16,6 +16,7 @@ const ActionCard = () => {
     <View>
       <Text style={styles.headingText}>TextUtils - Website</Text>
       <View style={styles.conatiner}>
+        <Text style={{fontSize:20,color:"#333333", fontWeight:"bold", textDecorationLine:"underline"}}>Linking React-Nativee</Text>
         <Text style={{ fontSize: 16, color: "#A0937D", fontWeight: "bold" }}>
           This website offers a comprehensive text-based utility platform for
           data manipulation and analysis. This Website provide features like
